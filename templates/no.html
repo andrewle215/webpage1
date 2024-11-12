@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Dancing Script', cursive;
+            background: linear-gradient(135deg, #ffafbd, #f6e1d5);
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 15px; 
+            z-index: 1; 
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #ff6b81;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff4a6e;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0; 
+            opacity: 0.3; 
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <h1>WRONG ONE!!!!!</h1>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+    <img src="{{ url_for('static', filename='images/image1.jpg') }}" alt="description of image">
+    <img src="{{ url_for('static', filename='images/image2.jpg') }}" alt="description of image">
+
+    <script>
+        function goBack(){
+            window.location.href = '/question';
+        }
+    </script>
+</body>
+</html>
